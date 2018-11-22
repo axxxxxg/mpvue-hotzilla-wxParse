@@ -35,7 +35,7 @@
 
     <!--a类型-->
     <block v-else-if="node.tag == 'a'">
-      <view @click="wxParseATap" :class="node.classStr" :data-href="node.attr.href" :style="node.styleStr">
+      <view @click.stop="wxParseATap" :class="node.classStr" :data-href="node.attr.href" :style="node.styleStr">
         <block v-for="(node, index) of node.nodes" :key="index">
           <wx-parse-template :node="node" />
         </block>
